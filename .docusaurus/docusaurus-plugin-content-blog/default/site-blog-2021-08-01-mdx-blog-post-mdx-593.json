@@ -16,10 +16,10 @@
   "hasTruncateMarker": false,
   "authors": [
     {
-      "name": "Sébastien Lorber",
-      "title": "Docusaurus maintainer",
-      "url": "https://sebastienlorber.com",
-      "imageURL": "https://github.com/slorber.png",
+      "name": "Juan Lozano",
+      "title": "Pipeable contributor",
+      "url": "https://github.com/jlozano",
+      "imageURL": "https://github.com/jlozano.png",
       "key": "slorber"
     }
   ],
