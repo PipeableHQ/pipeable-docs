@@ -10,7 +10,7 @@ export default {
   "url": "https://pipeable.com",
   "baseUrl": "/",
   "organizationName": "PipeableHQ",
-  "projectName": "pipeable",
+  "projectName": "pipeable-docs",
   "onBrokenLinks": "throw",
   "onBrokenMarkdownLinks": "warn",
   "i18n": {
@@ -27,7 +27,7 @@ export default {
       {
         "docs": {
           "sidebarPath": "./sidebars.js",
-          "editUrl": "https://github.com/PipeableHQ/pipeable-docs"
+          "editUrl": "https://github.com/PipeableHQ/pipeable-docs/edit/main/"
         },
         "blog": {
           "showReadingTime": true,
@@ -40,7 +40,7 @@ export default {
     ]
   ],
   "themeConfig": {
-    "image": "img/docusaurus-social-card.jpg",
+    "image": "img/pipeable-social-card.jpg",
     "navbar": {
       "title": "Pipeable",
       "logo": {

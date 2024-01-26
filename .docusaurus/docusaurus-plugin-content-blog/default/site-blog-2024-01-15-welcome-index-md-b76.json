@@ -8,16 +8,8 @@
   "formattedDate": "January 15, 2024",
   "tags": [
     {
-      "label": "facebook",
-      "permalink": "/blog/tags/facebook"
-    },
-    {
-      "label": "hello",
-      "permalink": "/blog/tags/hello"
-    },
-    {
-      "label": "docusaurus",
-      "permalink": "/blog/tags/docusaurus"
+      "label": "announcements",
+      "permalink": "/blog/tags/announcements"
     }
   ],
   "readingTime": 0.045,
@@ -38,9 +30,7 @@
       "dvitanov"
     ],
     "tags": [
-      "facebook",
-      "hello",
-      "docusaurus"
+      "announcements"
     ]
   },
   "unlisted": false

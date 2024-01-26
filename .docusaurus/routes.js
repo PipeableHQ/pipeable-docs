@@ -53,18 +53,8 @@ export default [
     exact: true
   },
   {
-    path: '/blog/tags/docusaurus',
-    component: ComponentCreator('/blog/tags/docusaurus', '7f9'),
-    exact: true
-  },
-  {
-    path: '/blog/tags/facebook',
-    component: ComponentCreator('/blog/tags/facebook', 'ff3'),
-    exact: true
-  },
-  {
-    path: '/blog/tags/hello',
-    component: ComponentCreator('/blog/tags/hello', '797'),
+    path: '/blog/tags/announcements',
+    component: ComponentCreator('/blog/tags/announcements', '671'),
     exact: true
   },
   {
