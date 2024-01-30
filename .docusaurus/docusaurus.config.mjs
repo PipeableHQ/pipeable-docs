@@ -45,7 +45,7 @@ export default {
       "title": "Pipeable",
       "logo": {
         "alt": "Pipeable Logo",
-        "src": "img/pipeable-logo-200-rounded.png"
+        "src": "img/pipeable-logo.png"
       },
       "items": [
         {
