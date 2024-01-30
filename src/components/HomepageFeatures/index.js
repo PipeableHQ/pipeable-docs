@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'WebView Mastery',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/home_knobs.svg').default,
     description: (
       <>
         Gain unprecedented programmatic control over in-app embedded browsers, also known as webviews.
@@ -14,7 +14,7 @@ const FeatureList = [
   },
   {
     title: 'Cross-Platform SDK',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/home_phone.svg').default,
     description: (
       <>
         Pipeable is a powerful SDK designed with developers in mind, offering seamless integration for both iOS and Android.
@@ -24,7 +24,7 @@ const FeatureList = [
   //Leverage the power of client-side web automations in your mobile apps. 
   {
     title: 'In-App Automation',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/home_robot.svg').default,
     description: (
       <>
         Compatible with Playwright and Puppeteer, Pipeable offers advanced web automation capabilities right from your mobile app.
