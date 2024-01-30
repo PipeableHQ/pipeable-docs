@@ -5,7 +5,7 @@
  */
 export default {
   "title": "Pipeable",
-  "tagline": "Mobile webview automation framework for iOS and Android",
+  "tagline": "Magic web automation powers for your mobile app",
   "favicon": "img/favicon.ico",
   "url": "https://pipeable.com",
   "baseUrl": "/",

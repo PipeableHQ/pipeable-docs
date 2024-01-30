@@ -4,36 +4,33 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'TBD',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        Pipeable docs coming soon!
-      </>
-    ),
-  },
-  /*
-  {
-    title: 'Focus on What Matters',
+    title: 'WebView Mastery',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Gain unprecedented programmatic control over in-app embedded browsers, also known as webviews.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Cross-Platform SDK',
+    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Pipeable is a powerful SDK designed with developers in mind, offering seamless integration for both iOS and Android.
       </>
     ),
   },
-  */
+  //Leverage the power of client-side web automations in your mobile apps. 
+  {
+    title: 'In-App Automation',
+    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    description: (
+      <>
+        Compatible with Playwright and Puppeteer, Pipeable offers advanced web automation capabilities right from your mobile app.
+      </>
+    ),
+  },
 ];
 
 function Feature({ Svg, title, description }) {

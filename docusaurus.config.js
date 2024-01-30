@@ -9,7 +9,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Pipeable',
-  tagline: 'Mobile webview automation framework for iOS and Android',
+  tagline: 'Magic web automation powers for your mobile app',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here

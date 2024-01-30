@@ -20,7 +20,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            Pipeable Tutorial - 5min ⏱️
+            Pipeable documentation (coming soon) ⏱️
           </Link>
         </div>
       </div>
@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
-      description="Pipeable is a mobile webview automation framework for iOS and Android">
+      description="Give your mobile app magic web automation powers with the Pipeable developer SDK">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
