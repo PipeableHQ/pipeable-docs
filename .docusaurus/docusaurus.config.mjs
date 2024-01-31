@@ -105,7 +105,7 @@ export default {
           ]
         }
       ],
-      "copyright": " Pipeable Documentation © 2024 by <a href=\"https://www.pipeable.com\">Pipeable</a> is licensed under <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY 4.0</a>. Built with <a href=\"https://docusaurus.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Docusaurus</a>. Emojis by <a href=\"https://openmoji.org/\" target=\"_blank\" rel=\"noopener noreferrer\">OpenMoji</a>.\n        "
+      "copyright": " Pipeable Documentation © 2024 by <a href=\"https://www.pipeable.com\">Pipeable</a> is licensed under <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener noreferrer\">CC BY 4.0</a>. Built with <a href=\"https://docusaurus.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Docusaurus</a>. Emojis by <a href=\"https://openmoji.org/\" target=\"_blank\" rel=\"noopener noreferrer\">OpenMoji</a>. Pipeable is a product of <a href=\"https://indexedinc.com/\">Indexed</a>.\n        "
     },
     "prism": {
       "theme": {
