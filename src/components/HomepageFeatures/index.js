@@ -17,17 +17,44 @@ const FeatureList = [
     Svg: require('@site/static/img/home_phone.svg').default,
     description: (
       <>
-        Pipeable is a powerful SDK designed with developers in mind, offering seamless integration for both iOS and Android.
+        Harness the power of the Pipeable SDK with seamless integration across both iOS and Android platforms.
       </>
     ),
   },
-  //Leverage the power of client-side web automations in your mobile apps. 
+
   {
-    title: 'In-App Automation',
+    title: 'Universal Automation',
     Svg: require('@site/static/img/home_robot.svg').default,
     description: (
       <>
-        Compatible with Playwright and Puppeteer, Pipeable offers advanced web automation capabilities right from your mobile app.
+        Build automations that leverage the document object model (DOM) and can do anything that a user can do, unrestricted by the absence or limitations of APIs.
+      </>
+    ),
+  },
+  {
+    title: 'Broad Compatibility',
+    Svg: require('@site/static/img/home_masks.svg').default,
+    description: (
+      <>
+        Leverage Pipeable's compatibility with Puppeteer and Playwright to utilize the same automation code on both cloud and client platforms.
+      </>
+    ),
+  },
+  {
+    title: 'Seamless Authentication',
+    Svg: require('@site/static/img/home_unlocked.svg').default,
+    description: (
+      <>
+        Empower users to effortlessly sign into websites using their preferred auth methods, such as FaceID or TouchID. The tight integration between webviews and mobile OSes eliminates the need for manual credential entry or explicit sharing.
+      </>
+    ),
+  },
+  {
+    title: 'Client and Cloud',
+    Svg: require('@site/static/img/home_cloud.svg').default,
+    description: (
+      <>
+        Execute automations entirely on the client for better privacy and security. Or offer users an option to continue the session in the cloud for better convenience and more flexibility.
       </>
     ),
   },

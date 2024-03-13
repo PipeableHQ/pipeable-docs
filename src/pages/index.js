@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
-      description="Give your mobile app magic web automation powers with the Pipeable developer SDK">
+      description="Pipeable is an Android and iOS SDK that allows programmatically controlling webviews">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
