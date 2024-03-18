@@ -28,3 +28,27 @@
   --ifm-color-primary-lightest: #d8cadc;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+
+div[class^="announcementBar_"][role="banner"] {
+  background-color: #fafbfc;
+  height: auto;
+}
+
+div[class^="announcementBar_"][role="banner"] button.close svg {
+  color: #613183 !important;
+}
+
+div[class*="announcementBarContent"] {
+  line-height: 40px;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px 30px;
+  color: #091E42;
+}
+
+div[class*="announcementBarContent"] a {
+  text-decoration: underline;
+  display: inline-block;
+  color: var(--brand) !important;
+}
