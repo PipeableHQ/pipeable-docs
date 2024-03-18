@@ -54,8 +54,13 @@ export default function HomepageHeader() {
           <div className={styles.buttons}>
             <Link
               className="button button--secondary button--lg"
-              to="/docs/intro">
-              Docs coming soon!
+              to="https://calendly.com/deyan-vitanov/30min">
+              Book a meeting with us!
+            </Link>
+            <Link
+              className="button button--primary button--lg"
+              to="https://forms.gle/i8C7F3zcuizWkien7">
+              Get the latest updates!
             </Link>
           </div>
         </div>

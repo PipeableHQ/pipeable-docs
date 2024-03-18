@@ -34,4 +34,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1rem 0;
+}
+
+.buttons > *:not(:last-child) {
+    margin-right: .1rem; /* Adjust the value as needed */
 }
