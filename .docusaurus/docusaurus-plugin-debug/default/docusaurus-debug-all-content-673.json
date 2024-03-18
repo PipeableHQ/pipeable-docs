@@ -15,9 +15,9 @@
           "editUrlLocalized": "https://github.com/PipeableHQ/pipeable-docs/edit/main/i18n/en/docusaurus-plugin-content-docs/current",
           "isLast": true,
           "routePriority": -1,
-          "sidebarFilePath": "/Users/dvitanov/github/pipeable-docs/sidebars.js",
-          "contentPath": "/Users/dvitanov/github/pipeable-docs/docs",
-          "contentPathLocalized": "/Users/dvitanov/github/pipeable-docs/i18n/en/docusaurus-plugin-content-docs/current",
+          "sidebarFilePath": "/Users/juanlozano/dev/pipeable/pipeable-docs/sidebars.js",
+          "contentPath": "/Users/juanlozano/dev/pipeable/pipeable-docs/docs",
+          "contentPathLocalized": "/Users/juanlozano/dev/pipeable/pipeable-docs/i18n/en/docusaurus-plugin-content-docs/current",
           "docs": [
             {
               "id": "intro",

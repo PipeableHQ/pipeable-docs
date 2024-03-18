@@ -9,6 +9,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 import { sampleCode } from './sampleCode';
+import React, { useState, useEffect } from 'react';
 
 function SampleCode() {
     return (
@@ -22,6 +23,20 @@ function SampleCode() {
 
 export default function HomepageHeader() {
     const { siteConfig } = useDocusaurusContext();
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => {
+          setScreenWidth(window.innerWidth);
+        };
+    
+        window.addEventListener('resize', handleResize);
+    
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     return (
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
@@ -29,28 +44,33 @@ export default function HomepageHeader() {
             {siteConfig.title}
           </Heading>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
-          {/* <div className={clsx(styles.heroRow)}>
-            <div className={clsx('col col--10')}>
-                <video playsInline loop muted controls className={clsx(styles.video)}>
-                    <source src="demo_video.mp4" type="video/mp4"/>
-                </video>
+          {screenWidth <= 768 ? (
+            <div>
+                <div className={clsx(styles.heroRow)}>
+                    <div className={clsx('col col--10')}>
+                        <video playsInline loop muted controls className={clsx(styles.iosVideo)}>
+                            <source src="demo_video_ios.mp4" type="video/mp4"/>
+                        </video>
+                    </div>
+                </div>
+                <div className={clsx(styles.heroRow)}>
+                    <div className={clsx('col col--10')}>
+                        <SampleCode />
+                    </div>
+                </div>
             </div>
-          </div>
-          <div className={clsx(styles.heroRow)}>
-            <div className={clsx('col col--10')}>
-                <SampleCode />
+            ) : (
+            <div className={clsx(styles.heroRow)}>
+                <div className={clsx('col col--4')}>
+                    <video playsInline loop muted controls className={clsx(styles.iosVideo)}>
+                        <source src="demo_video_ios.mp4" type="video/mp4"/>
+                    </video>
+                </div>
+                <div className={clsx('col col--8', 'code')}>
+                    <SampleCode />
+                </div>
             </div>
-          </div> */}
-          <div className={clsx(styles.heroRow)}>
-            <div className={clsx('col col--4')}>
-                <video playsInline loop muted controls className={clsx(styles.iosVideo)}>
-                    <source src="demo_video_ios.mp4" type="video/mp4"/>
-                </video>
-            </div>
-            <div className={clsx('col col--8')}>
-                <SampleCode />
-            </div>
-          </div>
+            )}
           <div className={styles.buttons}>
             <Link
               className="button button--secondary button--lg"
