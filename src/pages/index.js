@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
-      description="Pipeable is an Android and iOS SDK that allows programmatically controlling webviews">
+      description="Pipeable is an open-source iOS and (soon) Android SDK that allows developers to programmatically control webviews in mobile apps.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

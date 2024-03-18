@@ -17,7 +17,7 @@ const FeatureList = [
     Svg: require('@site/static/img/home_phone.svg').default,
     description: (
       <>
-        Harness the power of the Pipeable SDK with seamless integration across both iOS and Android platforms.
+        Harness the power of the Pipeable SDK with seamless integration across both iOS and (soon) Android platforms.
       </>
     ),
   },
