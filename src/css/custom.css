@@ -31,7 +31,6 @@
 
 
 div[class^="announcementBar_"][role="banner"] {
-  border-bottom-color: var(--deepdark);
   background-color: #fafbfc;
   height: auto;
 }
