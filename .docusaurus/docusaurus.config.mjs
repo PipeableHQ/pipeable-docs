@@ -314,8 +314,6 @@ export default {
     "announcementBar": {
       "id": "blog_announce",
       "content": "🎉 Check out our <a href=\"/blog\">blog post announcing Pipeable</a>!",
-      "backgroundColor": "#fafbfc",
-      "textColor": "#091E42",
       "isCloseable": true
     },
     "colorMode": {
