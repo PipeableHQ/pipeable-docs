@@ -30,19 +30,18 @@ export default function HomepageHeader() {
         <Heading as="h1" className="hero__title">
           {siteConfig.title}
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>(
-        <div className={clsx(styles.heroRow)}>
-          <div className={clsx('col col--4')}>
+        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <div className='rowHero'>
+          <div className="col">
             <video playsInline loop muted controls className={clsx(styles.iosVideo)}>
               <source src="demo_video_ios.mp4" type="video/mp4" />
             </video>
           </div>
-          <div className={clsx('col col--8', 'code')}>
+          <div className="col">
             <SampleCode />
           </div>
         </div>
-        )
-        <div className={styles.buttons}>
+        <div className="buttons">
           <Link
             className="button button--secondary button--lg"
             to="https://calendly.com/deyan-vitanov/30min">

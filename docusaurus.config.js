@@ -177,7 +177,7 @@ const config = {
       announcementBar: {
         id: 'blog_announce',
         content:
-          '🎉 Check out our <a href="/blog">blog post announcing Pipeable</a>!',
+          '🎉 Check out our <a href="/blog/introducing-pipeable">blog post announcing Pipeable</a>!',
         // rest of styling is done in src/css/custom.css
         isCloseable: true,
       },
