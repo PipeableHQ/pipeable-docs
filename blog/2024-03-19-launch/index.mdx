@@ -63,26 +63,26 @@ print(storyTitles)
 A couple of things to note:
 
 - The automation is operating directly on the website’s document object model (DOM) and allows you, the developer, to do anything that a user can do, even if there is no API or the API is restricted.
-- If you are familiar with Playwright or Puppeteer then the above code should look familiar to you and this is intentional, we designed Pipeable to be compatible with these frameworks (see Pipeable Scripting below).
-- You can checkout the full code in a sample app [here](https://github.com/PipeableHQ/pipeable-ios-samples/tree/main).
+- If you are familiar with Playwright or Puppeteer then the above code should look familiar to you and this is intentional, we designed Pipeable to be broadly compatible with these frameworks (see Pipeable Scripting below).
+- You can checkout the full code in a sample app [here](https://github.com/PipeableHQ/pipeable-ios-samples/).
 
 ### Agentic AI
 
 While Pipeable can be used for many things, we are particularly excited about unlocking agentic AI on mobile through the power of webview automation. Specifically the ability to connect to 3rd party websites and perform actions there on behalf of the user, from within a mobile app. This capability paves the way for richer, more dynamic app experiences, turning mobile applications into powerful tools that not only access web information but interact with web ecosystems on behalf of users. We're eager to see the creative solutions developers will build with Pipeable, enhancing mobile app functionality and empowering users.
 
-To get a feel for what this could look like you can check out a simple AirBnB booking agent that we built with Pipeable and GPT4 in our samples [repo](<(https://github.com/PipeableHQ/pipeable-ios-samples)>).
+To get a feel for what this could look like you can check out a simple AirBnB booking agent that we built with Pipeable and GPT4 in our samples [repo](https://github.com/PipeableHQ/pipeable-ios-samples/).
 
 ### Why webviews and Pipeable?
 
-We think that Pipeable and webviews are a great fit for a number of reasons:
+We think that Pipeable and webviews are a great fit for automations for a number of reasons:
 
 - Because webviews are integrated with mobile OS-es, users can log into websites using their preferred mobile authentication workflow (leveraging FaceID, TouchID, etc.) without the need to explicitly share or type credentials. Handling CAPTCHAs, 2FA, etc. is similarly fluid.
 - Automations leverage the website’s document object model (DOM) and allow AI agents to do anything that a user can do, even when there is no API or the API is restricted.
-- Automations can be executed entirely on the client for better privacy and security. Developers can offer an option to continue the session in the cloud using Pipeable Scripting for better convenience and more flexibility.
+- Automations can be executed entirely on the client for better privacy and security. Also, developers can offer an option to continue the session in the cloud using Pipeable Scripting for better convenience and more flexibility.
 
 ### Pipeable Scripting
 
-PipeableScript is a runtime that allows Pipeable developers to write their automation scripts in Typescript/Javascript and still execute these scripts on mobile. This has two key benefits:
+The final cornerstone of the PipeableSDK is PipeableScript, a runtime environment that allows developers to write their automations in TypeScript/JavaScript, while still enabling execution directly on mobile devices. This has two key benefits:
 
 - You can dynamically load your scripts into your app at runtime, this means that if the underlying website changes and your automation breaks you can simply fix the script and deploy it to your app without going through the full app update process.
 - The scripts you write are broadly compatible[^1] with Playwright and Puppeteer, this means that you can run your PipeableScript in Playwright or Puppeteer if you want to execute your script on a server. This can be especially helpful for certain types of tasks which are long running or compute intensive.
