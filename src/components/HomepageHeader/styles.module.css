@@ -24,12 +24,6 @@
   justify-content: center;
 }
   
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
-}
-  
 .buttons {
   display: flex;
   align-items: center;
@@ -39,4 +33,14 @@
 
 .buttons > *:not(:last-child) {
     margin-right: .1rem; /* Adjust the value as needed */
+}
+
+@media screen and (max-width: 996px) {
+    .heroBanner {
+        padding: 2rem;
+    }
+    .buttons {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Align items horizontally in the center */
+    }
 }
