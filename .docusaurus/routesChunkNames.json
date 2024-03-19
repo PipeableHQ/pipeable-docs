@@ -62,6 +62,14 @@
     },
     "archive": "archive---blog-archiveb-2-f-393"
   },
+  "/blog/introducing-pipeable-9f9": {
+    "__comp": "__comp---theme-blog-post-pageccc-cab",
+    "__context": {
+      "plugin": "plugin---blog-089-409"
+    },
+    "sidebar": "sidebar---blog-814-8ac",
+    "content": "content---blog-welcomee-3-a-ce3"
+  },
   "/blog/tags-72b": {
     "__comp": "__comp---theme-blog-tags-list-page-01-a-d0b",
     "__context": {
@@ -97,14 +105,6 @@
     ],
     "tag": "tag---blog-tags-launch-022-c4a",
     "listMetadata": "listMetadata---blog-tags-launchf-6-d-969"
-  },
-  "/blog/welcome-d14": {
-    "__comp": "__comp---theme-blog-post-pageccc-cab",
-    "__context": {
-      "plugin": "plugin---blog-089-409"
-    },
-    "sidebar": "sidebar---blog-814-8ac",
-    "content": "content---blog-welcomee-3-a-ce3"
   },
   "/markdown-page-8f5": {
     "__comp": "__comp---theme-mdx-page-1-f-3-b90",

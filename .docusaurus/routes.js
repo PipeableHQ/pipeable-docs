@@ -48,6 +48,11 @@ export default [
     exact: true
   },
   {
+    path: '/blog/introducing-pipeable',
+    component: ComponentCreator('/blog/introducing-pipeable', '9f9'),
+    exact: true
+  },
+  {
     path: '/blog/tags',
     component: ComponentCreator('/blog/tags', '72b'),
     exact: true
@@ -60,11 +65,6 @@ export default [
   {
     path: '/blog/tags/launch',
     component: ComponentCreator('/blog/tags/launch', '741'),
-    exact: true
-  },
-  {
-    path: '/blog/welcome',
-    component: ComponentCreator('/blog/welcome', 'd14'),
     exact: true
   },
   {

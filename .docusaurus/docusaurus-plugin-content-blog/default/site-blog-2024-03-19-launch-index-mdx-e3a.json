@@ -1,8 +1,8 @@
 {
-  "permalink": "/blog/welcome",
+  "permalink": "/blog/introducing-pipeable",
   "editUrl": "https://github.com/PipeableHQ/pipeable-docs/blog/2024-03-19-launch/index.mdx",
   "source": "@site/blog/2024-03-19-launch/index.mdx",
-  "title": "Welcome",
+  "title": "Introducing Pipeable",
   "description": "For the past few months we have been working on the PipeableSDK and today we are excited to show it to you all!",
   "date": "2024-03-19T00:00:00.000Z",
   "formattedDate": "March 19, 2024",
@@ -16,7 +16,7 @@
       "permalink": "/blog/tags/launch"
     }
   ],
-  "readingTime": 3.835,
+  "readingTime": 3.83,
   "hasTruncateMarker": true,
   "authors": [
     {
@@ -42,8 +42,8 @@
     }
   ],
   "frontMatter": {
-    "slug": "welcome",
-    "title": "Welcome",
+    "slug": "introducing-pipeable",
+    "title": "Introducing Pipeable",
     "authors": [
       "dvitanov",
       "jlozano",
