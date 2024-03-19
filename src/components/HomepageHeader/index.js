@@ -31,9 +31,9 @@ export default function HomepageHeader() {
           {siteConfig.title}
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className='row'>
+        <div className='rowHero'>
           <div className="col">
-            <video playsInline loop muted controls className={clsx(styles.iosVideo)}>
+            <video playsInline loop muted controls className="iosVideo">
               <source src="demo_video_ios.mp4" type="video/mp4" />
             </video>
           </div>
