@@ -3,5 +3,10 @@
     "label": "announcements",
     "permalink": "/blog/tags/announcements",
     "count": 1
+  },
+  {
+    "label": "launch",
+    "permalink": "/blog/tags/launch",
+    "count": 1
   }
 ]

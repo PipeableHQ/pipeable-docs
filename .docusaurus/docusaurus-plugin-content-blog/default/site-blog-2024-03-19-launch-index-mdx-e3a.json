@@ -1,0 +1,58 @@
+{
+  "permalink": "/blog/welcome",
+  "editUrl": "https://github.com/PipeableHQ/pipeable-docs/blog/2024-03-19-launch/index.mdx",
+  "source": "@site/blog/2024-03-19-launch/index.mdx",
+  "title": "Welcome",
+  "description": "For the past few months we have been working on the PipeableSDK and today we are excited to show it to you all!",
+  "date": "2024-03-19T00:00:00.000Z",
+  "formattedDate": "March 19, 2024",
+  "tags": [
+    {
+      "label": "announcements",
+      "permalink": "/blog/tags/announcements"
+    },
+    {
+      "label": "launch",
+      "permalink": "/blog/tags/launch"
+    }
+  ],
+  "readingTime": 3.835,
+  "hasTruncateMarker": true,
+  "authors": [
+    {
+      "name": "Deyan Vitanov",
+      "title": "Pipeable contributor",
+      "url": "https://github.com/dvitanov",
+      "imageURL": "https://github.com/dvitanov.png",
+      "key": "dvitanov"
+    },
+    {
+      "name": "Juan Lozano",
+      "title": "Pipeable contributor",
+      "url": "https://github.com/jlozano",
+      "imageURL": "https://github.com/jlozano.png",
+      "key": "jlozano"
+    },
+    {
+      "name": "Petar Dobrev",
+      "title": "Pipeable contributor",
+      "url": "https://github.com/pdobrev",
+      "imageURL": "https://github.com/pdobrev.png",
+      "key": "pdobrev"
+    }
+  ],
+  "frontMatter": {
+    "slug": "welcome",
+    "title": "Welcome",
+    "authors": [
+      "dvitanov",
+      "jlozano",
+      "pdobrev"
+    ],
+    "tags": [
+      "announcements",
+      "launch"
+    ]
+  },
+  "unlisted": false
+}

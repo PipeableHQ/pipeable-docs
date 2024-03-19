@@ -31,7 +31,8 @@ export default {
         },
         "blog": {
           "showReadingTime": true,
-          "editUrl": "https://github.com/PipeableHQ/pipeable-docs"
+          "editUrl": "https://github.com/PipeableHQ/pipeable-docs",
+          "blogSidebarCount": 0
         },
         "theme": {
           "customCss": "./src/css/custom.css"
