@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WaitUntilOption Enumeration Reference</title>
+    <link rel="stylesheet" type="text/css" href="../../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../../js/jquery.min.js" defer></script>
+    <script src="../../js/jazzy.js" defer></script>
+    
+    <script src="../../js/lunr.min.js" defer></script>
+    <script src="../../js/typeahead.jquery.js" defer></script>
+    <script src="../../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Enum/WaitUntilOption" class="dashAnchor"></a>
+    <a title="WaitUntilOption Enumeration Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../../index.html">PipeableSDK 0.0.15 Docs</a></p>
+        <p class="header-right"><a href="https://github.com/PipeableHQ/pipeable-ios"><img src="../../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
+        <div class="header-right">
+          <form role="search" action="../../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../../index.html">PipeableSDK Reference</a>
+        <img id="carat" src="../../img/carat.png" alt=""/>
+        WaitUntilOption Enumeration Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Classes/PipeableElement.html">PipeableElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/PipeablePage.html">PipeablePage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/PipeablePage/WaitUntilOption.html">– WaitUntilOption</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes/PipeableWebView.html">PipeableWebView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Enums/PipeableError.html">PipeableError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Enums/ScriptError.html">ScriptError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Functions.html#/s:11PipeableSDK9runScriptySo7JSValueCSS_AA0A4PageCSgtYaKF">runScript(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Structs/PipeableHTTPResponse.html">PipeableHTTPResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs.html#/s:11PipeableSDK15ScriptErrorInfoV">ScriptErrorInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/XHRResult.html">XHRResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/XHRResult/ResponseType.html">– ResponseType</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>WaitUntilOption</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">WaitUntilOption</span> <span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                </div>
+              </div>
+            <p>Enum representing the various states to wait for before considering a navigation or page action complete.</p>
+
+<ul>
+<li><code>load</code>: Wait until the <code>load</code> event is fired, indicating that the entire page and all dependent resources have loaded.</li>
+<li><code>domcontentloaded</code>: Wait until the <code>DOMContentLoaded</code> event is fired, indicating that the HTML is fully parsed,
+but stylesheets, images, and subframes may still be loading.</li>
+<li><code>networkidle</code>: Wait until the network is idle, meaning there are no ongoing network requests for a specified time period (0.5s).
+This state implies that most, if not all, resources have been fetched and processed.</li>
+</ul>
+
+              <div class="slightly-smaller">
+                <a href="https://github.com/PipeableHQ/pipeable-ios/blob/main/Sources/PipeableSDK/PipeablePage+Navigation.swift#L12-L16">Show on GitHub</a>
+              </div>
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11PipeableSDK0A4PageC15WaitUntilOptionO4loadyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/load" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11PipeableSDK0A4PageC15WaitUntilOptionO4loadyA2EmF">load</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">load</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/PipeableHQ/pipeable-ios/blob/main/Sources/PipeableSDK/PipeablePage+Navigation.swift#L13">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11PipeableSDK0A4PageC15WaitUntilOptionO16domcontentloadedyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/domcontentloaded" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11PipeableSDK0A4PageC15WaitUntilOptionO16domcontentloadedyA2EmF">domcontentloaded</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">domcontentloaded</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/PipeableHQ/pipeable-ios/blob/main/Sources/PipeableSDK/PipeablePage+Navigation.swift#L14">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11PipeableSDK0A4PageC15WaitUntilOptionO11networkidleyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/networkidle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11PipeableSDK0A4PageC15WaitUntilOptionO11networkidleyA2EmF">networkidle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">networkidle</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/PipeableHQ/pipeable-ios/blob/main/Sources/PipeableSDK/PipeablePage+Navigation.swift#L15">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2024 <a class="link" href="https://pipeable.com" target="_blank" rel="external noopener">Pipeable</a>. All rights reserved. (Last updated: 2024-03-27)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>
