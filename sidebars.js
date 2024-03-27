@@ -19,7 +19,7 @@ const sidebars = {
     {
       type: "link",
       label: "API Reference",
-      href: "pathname:///api",
+      href: "pathname:///api/index.html",
     },
   ],
 

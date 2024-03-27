@@ -139,4 +139,4 @@ let repsonse = try await page.waitForResponse(
 
 # Learn more
 
-Check out the [API Reference](pathname:///api) to see everything that you can do using Pipeable.
+Check out the [API Reference](pathname:///api/index.html) to see everything that you can do using Pipeable.
