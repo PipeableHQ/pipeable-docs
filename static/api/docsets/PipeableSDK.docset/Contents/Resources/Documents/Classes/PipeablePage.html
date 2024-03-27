@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PipeablePage Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/PipeablePage" class="dashAnchor"></a>
+    <a title="PipeablePage Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">PipeableSDK 0.0.15 Docs</a></p>
+        <p class="header-right"><a href="https://github.com/PipeableHQ/pipeable-ios"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
+        <div class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">PipeableSDK Reference</a>
+        <img id="carat" src="../img/carat.png" alt=""/>
+        PipeablePage Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/PipeableElement.html">PipeableElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PipeablePage.html">PipeablePage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PipeablePage/WaitUntilOption.html">– WaitUntilOption</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PipeableWebView.html">PipeableWebView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/PipeableError.html">PipeableError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ScriptError.html">ScriptError</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:11PipeableSDK9runScriptySo7JSValueCSS_AA0A4PageCSgtYaKF">runScript(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/PipeableHTTPResponse.html">PipeableHTTPResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:11PipeableSDK15ScriptErrorInfoV">ScriptErrorInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/XHRResult.html">XHRResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/XHRResult/ResponseType.html">– ResponseType</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>PipeablePage</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">PipeablePage</span></code></pre>
+
+                </div>
+              </div>
+            <p>PipeablePage provides methods to interact with a web page loaded in the
+webview.
+It can be constructed by wrapping an existing WKWebView using a constructor
+or by using a <code><a href="../Classes/PipeableWebView.html">PipeableWebView</a></code> and acquiring it from there.
+Note that in the case of using a constructor, you need to make sure that
+the lifecycle of the <code>PipeablePage</code> is managed correctly.</p>
+
+<p>Example:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">webView</span> <span class="o">=</span> <span class="kt">PipeableWebView</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">page</span> <span class="o">=</span> <span class="n">webView</span><span class="o">.</span><span class="n">page</span>
+
+<span class="k">try</span><span class="p">?</span> <span class="n">await</span> <span class="n">page</span><span class="o">.</span><span class="nf">goto</span><span class="p">(</span><span class="s">"https://example.com"</span><span class="p">,</span> <span class="nv">waitUntil</span><span class="p">:</span> <span class="o">.</span><span class="n">load</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">exampleEl</span> <span class="o">=</span> <span class="k">try</span><span class="p">?</span> <span class="n">await</span> <span class="n">page</span><span class="o">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="s">"input[name='example']"</span><span class="p">)</span>
+</code></pre>
+
+              <div class="slightly-smaller">
+                <a href="https://github.com/PipeableHQ/pipeable-ios/blob/main/Sources/PipeableSDK/PipeablePage.swift#L19-L253">Show on GitHub</a>
+              </div>
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11PipeableSDK0A4PageC_21debugPrintConsoleLogsACSo9WKWebViewC_SbSgtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(_:debugPrintConsoleLogs:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11PipeableSDK0A4PageC_21debugPrintConsoleLogsACSo9WKWebViewC_SbSgtcfc">init(_:<wbr>debugPrintConsoleLogs:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Constructs a <code>PipeablePage</code> from an existing <code>WKWebView</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="n">_</span> <span class="nv">webView</span><span class="p">:</span> <span class="kt">WKWebView</span><span class="p">,</span> <span class="nv">debugPrintConsoleLogs</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/PipeableHQ/pipeable-ios/blob/main/Sources/PipeableSDK/PipeablePage.swift#L106-L108">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11PipeableSDK0A4PageC13addUserScript_13injectionTime16forMainFrameOnlyySS_So06WKUserf9InjectionH0VSbtF"></a>
+                    <a name="//apple_ref/swift/Method/addUserScript(_:injectionTime:forMainFrameOnly:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11PipeableSDK0A4PageC13addUserScript_13injectionTime16forMainFrameOnlyySS_So06WKUserf9InjectionH0VSbtF">addUserScript(_:<wbr>injectionTime:<wbr>forMainFrameOnly:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Adds a script to be included in any page and frame loaded in  the webview.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">addUserScript</span><span class="p">(</span><span class="n">_</span> <span class="nv">contents</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">injectionTime</span><span class="p">:</span> <span class="kt">WKUserScriptInjectionTime</span> <span class="o">=</span> <span class="o">.</span><span class="n">atDocumentEnd</span><span class="p">,</span> <span class="nv">forMainFrameOnly</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>contents</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The script content to be added.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>injectionTime</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Specifies when the script should be injected into the web page. Defaults to <code>.atDocumentEnd</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>forMainFrameOnly</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Boolean indicating whether the script should be injected into all frames or just the main frame. Defaults to <code>false</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/PipeableHQ/pipeable-ios/blob/main/Sources/PipeableSDK/PipeablePage.swift#L192-L200">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11PipeableSDK0A4PageC16submitActiveFormSbyYaKF"></a>
+                    <a name="//apple_ref/swift/Method/submitActiveForm()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11PipeableSDK0A4PageC16submitActiveFormSbyYaKF">submitActiveForm()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Submits the currently active form on the page.
+Useful when there is no submit button and a form is only submitted from the mobile keyboard.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    An error if JavaScript evaluation fails.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">submitActiveForm</span><span class="p">()</span> <span class="n">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A boolean indicating whether the form submission was successful.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/PipeableHQ/pipeable-ios/blob/main/Sources/PipeableSDK/PipeablePage.swift#L206-L217">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11PipeableSDK0A4PageC11loadCookies14fromJSONStringySS_tF"></a>
+                    <a name="//apple_ref/swift/Method/loadCookies(fromJSONString:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11PipeableSDK0A4PageC11loadCookies14fromJSONStringySS_tF">loadCookies(fromJSONString:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">loadCookies</span><span class="p">(</span><span class="n">fromJSONString</span> <span class="nv">jsonString</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/PipeableHQ/pipeable-ios/blob/main/Sources/PipeableSDK/PipeablePage.swift#L220-L245">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11PipeableSDK0A4PageC3url10Foundation3URLVSgyF"></a>
+                    <a name="//apple_ref/swift/Method/url()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11PipeableSDK0A4PageC3url10Foundation3URLVSgyF">url()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Retrieves the current URL of the web view.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">url</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">URL</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The current URL, or <code>nil</code> if no URL is loaded.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/PipeableHQ/pipeable-ios/blob/main/Sources/PipeableSDK/PipeablePage.swift#L250-L252">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11PipeableSDK0A4PageC8evaluateyypSgSSYaKF"></a>
+                    <a name="//apple_ref/swift/Method/evaluate(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11PipeableSDK0A4PageC8evaluateyypSgSSYaKF">evaluate(_:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Evaluates a JavaScript expression synchronously.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    An error if the JavaScript evaluation fails.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">evaluate</span><span class="p">(</span><span class="n">_</span> <span class="nv">javascript</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="n">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Any</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>javascript</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The JavaScript expression to evaluate.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The result of the evaluation.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/PipeableHQ/pipeable-ios/blob/main/Sources/PipeableSDK/PipeablePage+Evaluate.swift#L9-L24">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11PipeableSDK0A4PageC21evaluateAsyncFunction_9argumentsypSgSS_SDySSypGtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/evaluateAsyncFunction(_:arguments:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11PipeableSDK0A4PageC21evaluateAsyncFunction_9argumentsypSgSS_SDySSypGtYaKF">evaluateAsyncFunction(_:<wbr>arguments:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Evaluates a JavaScript function asynchronously.</p>
+
+<ul>
+<li><p>arguments: A dictionary of arguments to pass to the function. The
+valid types are:</p>
+
+<ul>
+<li>PipeableElement: The element to pass to the function.</li>
+<li>Basic types: Int, String, etc.</li>
+<li>Collections (arrays and dictionaries) of the above types.</li>
+</ul></li>
+</ul><div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <p>An error if the JavaScript evaluation fails or if the
+provided arguments are not valid.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">evaluateAsyncFunction</span><span class="p">(</span><span class="n">_</span> <span class="nv">javascript</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">arguments</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">[:])</span> <span class="n">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Any</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>javascript</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The body of the javascript function to evaluate. It
+should not start with the function definition, but start straight
+with the function body. The arguments provided in the <code>arguments</code>
+parameter will be available as variables in the function body.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The result of the function. Can return a promise or a value.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/PipeableHQ/pipeable-ios/blob/main/Sources/PipeableSDK/PipeablePage+Evaluate.swift#L45-L81">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11PipeableSDK0A4PageC15WaitUntilOptionO"></a>
+                    <a name="//apple_ref/swift/Enum/WaitUntilOption" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11PipeableSDK0A4PageC15WaitUntilOptionO">WaitUntilOption</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Enum representing the various states to wait for before considering a navigation or page action complete.</p>
+
+<ul>
+<li><code>load</code>: Wait until the <code>load</code> event is fired, indicating that the entire page and all dependent resources have loaded.</li>
+<li><code>domcontentloaded</code>: Wait until the <code>DOMContentLoaded</code> event is fired, indicating that the HTML is fully parsed,
+but stylesheets, images, and subframes may still be loading.</li>
+<li><code>networkidle</code>: Wait until the network is idle, meaning there are no ongoing network requests for a specified time period (0.5s).
+This state implies that most, if not all, resources have been fetched and processed.</li>
+</ul>
+
+                        <a href="../Classes/PipeablePage/WaitUntilOption.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">WaitUntilOption</span> <span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/PipeableHQ/pipeable-ios/blob/main/Sources/PipeableSDK/PipeablePage+Navigation.swift#L12-L16">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11PipeableSDK0A4PageC4goto_9waitUntil7timeoutAA0A12HTTPResponseVSgSS_AC04WaitF6OptionOSitYaKF"></a>
+                    <a name="//apple_ref/swift/Method/goto(_:waitUntil:timeout:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11PipeableSDK0A4PageC4goto_9waitUntil7timeoutAA0A12HTTPResponseVSgSS_AC04WaitF6OptionOSitYaKF">goto(_:<wbr>waitUntil:<wbr>timeout:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Navigates the web view to a specified URL.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code>PipeableError.navigationError</code> if navigation fails.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">goto</span><span class="p">(</span><span class="n">_</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">waitUntil</span><span class="p">:</span> <span class="kt"><a href="../Classes/PipeablePage/WaitUntilOption.html">WaitUntilOption</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">load</span><span class="p">,</span> <span class="nv">timeout</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">30000</span><span class="p">)</span> <span class="n">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/PipeableHTTPResponse.html">PipeableHTTPResponse</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The URL to navigate to.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>waitUntil</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Specifies the event to wait for before considering the navigation complete. Defaults to <code>.load</code>.
+       Other options are <code>.domcontentloaded</code> and <code>.networkidle.</code></p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>timeout</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The maximum time in milliseconds to wait for the navigation to complete. Defaults to 30000ms.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A <code><a href="../Structs/PipeableHTTPResponse.html">PipeableHTTPResponse</a></code> object representing the HTTP response, or <code>nil</code> if the response is not available.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/PipeableHQ/pipeable-ios/blob/main/Sources/PipeableSDK/PipeablePage+Navigation.swift#L34-L51">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11PipeableSDK0A4PageC6reload9waitUntil7timeoutyAC04WaitF6OptionO_SitYaKF"></a>
+                    <a name="//apple_ref/swift/Method/reload(waitUntil:timeout:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11PipeableSDK0A4PageC6reload9waitUntil7timeoutyAC04WaitF6OptionO_SitYaKF">reload(waitUntil:<wbr>timeout:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reloads the current page.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <code>PipeableError.navigationError</code> if reload fails.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">reload</span><span class="p">(</span><span class="nv">waitUntil</span><span class="p">:</span> <span class="kt"><a href="../Classes/PipeablePage/WaitUntilOption.html">WaitUntilOption</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">load</span><span class="p">,</span> <span class="nv">timeout</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">30000</span><span class="p">)</span> <span class="n">async</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>waitUntil</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Specifies the event to wait for before considering the reload complete. Defaults to <code>.load</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>timeout</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The maximum time in milliseconds to wait for the reload to complete. Defaults to 30000ms.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/PipeableHQ/pipeable-ios/blob/main/Sources/PipeableSDK/PipeablePage+Navigation.swift#L58-L62">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11PipeableSDK0A4PageC16waitForLoadState0D5Until7timeoutyAC04WaitH6OptionO_SitYaKF"></a>
+                    <a name="//apple_ref/swift/Method/waitForLoadState(waitUntil:timeout:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11PipeableSDK0A4PageC16waitForLoadState0D5Until7timeoutyAC04WaitH6OptionO_SitYaKF">waitForLoadState(waitUntil:<wbr>timeout:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Waits for a specified load state.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    An error if the wait condition is not met within the timeout.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">waitForLoadState</span><span class="p">(</span><span class="nv">waitUntil</span><span class="p">:</span> <span class="kt"><a href="../Classes/PipeablePage/WaitUntilOption.html">WaitUntilOption</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">load</span><span class="p">,</span> <span class="nv">timeout</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">30000</span><span class="p">)</span> <span class="n">async</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>waitUntil</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The load state to wait for.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>timeout</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The maximum time in milliseconds to wait. Defaults to 30000ms.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/PipeableHQ/pipeable-ios/blob/main/Sources/PipeableSDK/PipeablePage+Navigation.swift#L69-L87">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11PipeableSDK0A4PageC10waitForURL_0D5Until7timeout22ignoreNavigationErrorsySbSSc_AC04WaitG6OptionOSiSbtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/waitForURL(_:waitUntil:timeout:ignoreNavigationErrors:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11PipeableSDK0A4PageC10waitForURL_0D5Until7timeout22ignoreNavigationErrorsySbSSc_AC04WaitG6OptionOSiSbtYaKF">waitForURL(_:<wbr>waitUntil:<wbr>timeout:<wbr>ignoreNavigationErrors:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Waits for the WebView to navigate to a URL that matches the given predicate.</p>
+
+<ul>
+<li>predicate: A closure that takes a URL and returns a boolean.</li>
+<li>waitUntil: When to consider navigation as finished, defaults to <code>.load</code>.</li>
+<li>timeout: Maximum time to wait for the navigation to finish, defaults to 30000ms.</li>
+<li>ignoreNavigationErrors: If true, ignores navigation errors and waits for the URL to match the predicate.</li>
+</ul><div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    PipeableError.navigationError if the navigation fails and ignoreNavigationErrors is false.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">waitForURL</span><span class="p">(</span>
+    <span class="n">_</span> <span class="nv">predicate</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">,</span>
+    <span class="nv">waitUntil</span><span class="p">:</span> <span class="kt"><a href="../Classes/PipeablePage/WaitUntilOption.html">WaitUntilOption</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">load</span><span class="p">,</span>
+    <span class="nv">timeout</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">30000</span><span class="p">,</span>
+    <span class="nv">ignoreNavigationErrors</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span>
+<span class="p">)</span> <span class="n">async</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/PipeableHQ/pipeable-ios/blob/main/Sources/PipeableSDK/PipeablePage+Navigation.swift#L96-L113">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11PipeableSDK0A4PageC15waitForResponse_7timeoutAA9XHRResultVSgSS_SitYaKF"></a>
+                    <a name="//apple_ref/swift/Method/waitForResponse(_:timeout:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11PipeableSDK0A4PageC15waitForResponse_7timeoutAA9XHRResultVSgSS_SitYaKF">waitForResponse(_:<wbr>timeout:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Waits for an asynchornous request made via XMLHttpRequest (XHR) or fetch to complete that matches the specified URL.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    <p><code><a href="../Enums/PipeableError.html#/s:11PipeableSDK0A5ErrorO15invalidResponseyA2CmF">PipeableError.invalidResponse</a></code> if the function fails to decode the XHR response or if the JavaScript
+execution returns an unexpected result. This error indicates an issue with the response format or a failure
+in the underlying JavaScript execution mechanism.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">waitForResponse</span><span class="p">(</span><span class="n">_</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">timeout</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">30000</span><span class="p">)</span> <span class="n">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/XHRResult.html">XHRResult</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>url</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Partial URL of the request to wait for.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>timeout</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The maximum time, in milliseconds, to wait for the XHR request to complete. Defaults to 30000ms (30 seconds).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An optional <code><a href="../Structs/XHRResult.html">XHRResult</a></code> object containing details about the completed XHR request, including
+status code, response body, response headers, the request URL, and the response type. Returns <code>nil</code> if the request
+does not complete within the specified timeout or if the response cannot be properly decoded.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/PipeableHQ/pipeable-ios/blob/main/Sources/PipeableSDK/PipeablePage+Navigation.swift#L127-L147">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11PipeableSDK0A4PageC13querySelectoryAA0A7ElementCSgSSYaKF"></a>
+                    <a name="//apple_ref/swift/Method/querySelector(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11PipeableSDK0A4PageC13querySelectoryAA0A7ElementCSgSSYaKF">querySelector(_:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries a single element matching a CSS selector.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    An error if JavaScript evaluation fails, e.g. a bad selector
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">querySelector</span><span class="p">(</span><span class="n">_</span> <span class="nv">selector</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="n">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/PipeableElement.html">PipeableElement</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>selector</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The CSS selector to match.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A <code><a href="../Classes/PipeableElement.html">PipeableElement</a></code> representing the matched element, or <code>nil</code> if no match is found.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/PipeableHQ/pipeable-ios/blob/main/Sources/PipeableSDK/PipeablePage+Selectors.swift#L9-L24">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11PipeableSDK0A4PageC16querySelectorAllySayAA0A7ElementCGSSYaKF"></a>
+                    <a name="//apple_ref/swift/Method/querySelectorAll(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11PipeableSDK0A4PageC16querySelectorAllySayAA0A7ElementCGSSYaKF">querySelectorAll(_:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries all elements matching a CSS selector.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    An error if JavaScript evaluation fails, e.g. a bad selector.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">querySelectorAll</span><span class="p">(</span><span class="n">_</span> <span class="nv">selector</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="n">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Classes/PipeableElement.html">PipeableElement</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>selector</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The CSS selector to match.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An array of <code><a href="../Classes/PipeableElement.html">PipeableElement</a></code> objects representing the matched elements.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/PipeableHQ/pipeable-ios/blob/main/Sources/PipeableSDK/PipeablePage+Selectors.swift#L30-L47">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11PipeableSDK0A4PageC13xpathSelectorySayAA0A7ElementCGSSYaKF"></a>
+                    <a name="//apple_ref/swift/Method/xpathSelector(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11PipeableSDK0A4PageC13xpathSelectorySayAA0A7ElementCGSSYaKF">xpathSelector(_:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Queries the web page for all elements that match a specified XPath expression.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    An error if the JavaScript evaluation fails, such as from an invalid XPath expression.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">xpathSelector</span><span class="p">(</span><span class="n">_</span> <span class="nv">xpath</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="n">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Classes/PipeableElement.html">PipeableElement</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>xpath</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A string representing the XPath expression to evaluate against the elements in the page.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An array of <code><a href="../Classes/PipeableElement.html">PipeableElement</a></code> objects representing all matching elements in the DOM.
+Returns an empty array if no matching elements are found.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/PipeableHQ/pipeable-ios/blob/main/Sources/PipeableSDK/PipeablePage+Selectors.swift#L54-L71">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11PipeableSDK0A4PageC12waitForXPath_7timeout7visibleAA0A7ElementCSgSS_SiSbtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/waitForXPath(_:timeout:visible:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11PipeableSDK0A4PageC12waitForXPath_7timeout7visibleAA0A7ElementCSgSS_SiSbtYaKF">waitForXPath(_:<wbr>timeout:<wbr>visible:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Waits for an element matching a specified XPath expression to appear in the web page.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    An error if the JavaScript evaluation fails or the wait operation times out.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">waitForXPath</span><span class="p">(</span><span class="n">_</span> <span class="nv">xpath</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">timeout</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">30000</span><span class="p">,</span> <span class="nv">visible</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span> <span class="n">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/PipeableElement.html">PipeableElement</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>xpath</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A string representing the XPath expression to wait for.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>timeout</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The maximum time, in milliseconds, to wait for the element to appear. Defaults to 30000ms.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>visible</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A Boolean indicating whether the element should be visible. Defaults to <code>false</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An optional <code><a href="../Classes/PipeableElement.html">PipeableElement</a></code> representing the matching element once it appears.
+Returns <code>nil</code> if the element does not appear within the specified timeout period.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/PipeableHQ/pipeable-ios/blob/main/Sources/PipeableSDK/PipeablePage+Selectors.swift#L81-L102">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11PipeableSDK0A4PageC15waitForSelector_7timeout7visibleAA0A7ElementCSgSS_SiSbtYaKF"></a>
+                    <a name="//apple_ref/swift/Method/waitForSelector(_:timeout:visible:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11PipeableSDK0A4PageC15waitForSelector_7timeout7visibleAA0A7ElementCSgSS_SiSbtYaKF">waitForSelector(_:<wbr>timeout:<wbr>visible:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Waits for an element matching a specified CSS selector to appear in the web page.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    An error if the JavaScript evaluation fails or the wait operation times out.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">waitForSelector</span><span class="p">(</span><span class="n">_</span> <span class="nv">selector</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">timeout</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">30000</span><span class="p">,</span> <span class="nv">visible</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span> <span class="n">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/PipeableElement.html">PipeableElement</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>selector</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A string representing the CSS selector to wait for.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>timeout</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The maximum time, in milliseconds, to wait for the element to appear. Defaults to 30000ms.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>visible</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A Boolean indicating whether the element should be visible. Defaults to <code>false</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An optional <code><a href="../Classes/PipeableElement.html">PipeableElement</a></code> representing the matching element once it appears.
+Returns <code>nil</code> if the element does not appear within the specified timeout period.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/PipeableHQ/pipeable-ios/blob/main/Sources/PipeableSDK/PipeablePage+Selectors.swift#L112-L133">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2024 <a class="link" href="https://pipeable.com" target="_blank" rel="external noopener">Pipeable</a>. All rights reserved. (Last updated: 2024-03-27)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>

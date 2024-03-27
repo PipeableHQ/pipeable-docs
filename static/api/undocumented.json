@@ -1,0 +1,110 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/pesho/src/pipeable/pipeable-ios/Sources/PipeableSDK/PipeablePage+Navigation.swift",
+      "line": 13,
+      "symbol": "PipeablePage.WaitUntilOption.load",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pesho/src/pipeable/pipeable-ios/Sources/PipeableSDK/PipeablePage+Navigation.swift",
+      "line": 14,
+      "symbol": "PipeablePage.WaitUntilOption.domcontentloaded",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pesho/src/pipeable/pipeable-ios/Sources/PipeableSDK/PipeablePage+Navigation.swift",
+      "line": 15,
+      "symbol": "PipeablePage.WaitUntilOption.networkidle",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pesho/src/pipeable/pipeable-ios/Sources/PipeableSDK/PipeablePage+Navigation.swift",
+      "line": 168,
+      "symbol": "XHRResult.ResponseType.none",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pesho/src/pipeable/pipeable-ios/Sources/PipeableSDK/PipeablePage+Navigation.swift",
+      "line": 169,
+      "symbol": "XHRResult.ResponseType.text",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pesho/src/pipeable/pipeable-ios/Sources/PipeableSDK/PipeablePage+Navigation.swift",
+      "line": 170,
+      "symbol": "XHRResult.ResponseType.arraybuffer",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pesho/src/pipeable/pipeable-ios/Sources/PipeableSDK/PipeablePage+Navigation.swift",
+      "line": 171,
+      "symbol": "XHRResult.ResponseType.blob",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pesho/src/pipeable/pipeable-ios/Sources/PipeableSDK/PipeablePage+Navigation.swift",
+      "line": 172,
+      "symbol": "XHRResult.ResponseType.document",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pesho/src/pipeable/pipeable-ios/Sources/PipeableSDK/PipeablePage+Navigation.swift",
+      "line": 173,
+      "symbol": "XHRResult.ResponseType.json",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pesho/src/pipeable/pipeable-ios/Sources/PipeableSDK/PipeablePage.swift",
+      "line": 220,
+      "symbol": "PipeablePage.loadCookies(fromJSONString:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pesho/src/pipeable/pipeable-ios/Sources/PipeableSDK/PipeablePage.swift",
+      "line": 255,
+      "symbol": "PipeableError",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pesho/src/pipeable/pipeable-ios/Sources/PipeableSDK/Script/Script.swift",
+      "line": 115,
+      "symbol": "ScriptErrorInfo",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pesho/src/pipeable/pipeable-ios/Sources/PipeableSDK/Script/Script.swift",
+      "line": 124,
+      "symbol": "ScriptError",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pesho/src/pipeable/pipeable-ios/Sources/PipeableSDK/Script/Script.swift",
+      "line": 125,
+      "symbol": "ScriptError.error(reason:info:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/pesho/src/pipeable/pipeable-ios/Sources/PipeableSDK/Script/Script.swift",
+      "line": 126,
+      "symbol": "ScriptError.unexpectedError",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/pesho/src/pipeable/pipeable-ios"
+}
